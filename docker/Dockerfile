@@ -85,7 +85,7 @@ RUN set -eux ; \
 RUN apk add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing/ pandoc
 
 
-RUN git clone https://github.com/outofcontrol/mediawiki-to-gfm.git ; \
+RUN git clone https://github.com/neobrain/mediawiki-to-gfm.git ; \
     cd mediawiki-to-gfm ; \
     composer update --no-dev ; \
     ln -s $(pwd)/convert.php /usr/bin

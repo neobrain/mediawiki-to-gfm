@@ -152,6 +152,8 @@ class Convert
                 $this->counter++;
             } catch (PandocException $e) {
                 if (!$this->skiperrors) {
+                    $this->message("HELLO!!!");
+                while (1);
                     throw new \Exception($e);
                 } else {
                     $this->message("Failed converting " . $fileMeta['title'] . ": " . $e->getMessage());
