@@ -151,9 +151,10 @@ class Convert
                 $this->saveFile($fileMeta, $output);
                 $this->counter++;
             } catch (PandocException $e) {
+				$fileMeta['directory'] = 'failed/';
+                $this->saveFile($fileMeta, $text);
                 if (!$this->skiperrors) {
                     $this->message("HELLO!!!");
-                while (1);
                     throw new \Exception($e);
                 } else {
                     $this->message("Failed converting " . $fileMeta['title'] . ": " . $e->getMessage());
